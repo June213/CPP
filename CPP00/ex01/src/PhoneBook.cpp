@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:32:20 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/07/25 10:26:09 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:34:29 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void PhoneBook::search_contact()
 	while (1)
 	{
 		std::cout << "Enter index of the contact you want to display or BACK to exit: ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input == "BACK")
 			break;
 		if (is_number(input))
