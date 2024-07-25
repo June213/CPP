@@ -8,8 +8,8 @@ SRC_DIR = src
 
 OBJ_DIR = obj
 
-SRCS = $(SRC_DIR)/phonebook.cpp \
-		$(SRC_DIR)/contact.cpp \
+SRCS = $(SRC_DIR)/PhoneBook.cpp \
+		$(SRC_DIR)/Contact.cpp \
 		$(SRC_DIR)/main.cpp \
 
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)

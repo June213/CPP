@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:52:07 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/07/24 13:15:08 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/07/25 10:20:32 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/phonebook.hpp"
+#include "../include/PhoneBook.hpp"
 
 int	main()
 {
-	phonebook	pb;
+	PhoneBook	pb;
 	std::string	command;
 
 	while (true)

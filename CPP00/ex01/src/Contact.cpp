@@ -1,63 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:32:14 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/07/24 13:15:30 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/07/25 10:16:01 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/contact.hpp"
+#include "../include/Contact.hpp"
 
-void contact::set_first_name(const std::string &fname)
+void Contact::set_first_name(const std::string &fname)
 {
 	first_name = fname;
 }
 
-void contact::set_last_name(const std::string &lname)
+void Contact::set_last_name(const std::string &lname)
 {
 	last_name = lname;
 }
 
-void contact::set_nickname(const std::string &nname)
+void Contact::set_nickname(const std::string &nname)
 {
 	nickname = nname;
 }
 
-void contact::set_phone_number(const std::string &pnumber)
+void Contact::set_phone_number(const std::string &pnumber)
 {
 	phone_number = pnumber;
 }
 
-void contact::set_darkes_secret(const std::string &dsecret)
+void Contact::set_darkes_secret(const std::string &dsecret)
 {
 	darkest_secret = dsecret;
 }
 
-std::string contact::get_first_name() const
+std::string Contact::get_first_name() const
 {
 	return (first_name);
 }
 
-std::string contact::get_last_name() const
+std::string Contact::get_last_name() const
 {
 	return (last_name);
 }
 
-std::string contact::get_nickname() const
+std::string Contact::get_nickname() const
 {
 	return (nickname);
 }
 
-std::string contact::get_phone_number() const
+std::string Contact::get_phone_number() const
 {
 	return (phone_number);
 }
 
-std::string contact::get_darkest_secret() const
+std::string Contact::get_darkest_secret() const
 {
 	return (darkest_secret);
 }

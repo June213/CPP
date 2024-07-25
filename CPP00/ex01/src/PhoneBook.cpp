@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:32:20 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/07/24 13:15:16 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/07/25 10:26:09 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/phonebook.hpp"
+#include "../include/PhoneBook.hpp"
 
-phonebook::phonebook(): contact_count(0), total_contacts(0) {}
+PhoneBook::PhoneBook(): contact_count(0), total_contacts(0) {}
 
-bool	phonebook::getinput_setfield(std::string field, std::string &input)
+bool	PhoneBook::getinput_setfield(std::string field, std::string &input)
 {
 	std:: cout << "Enter " << field << ": ";
 	std::getline(std::cin, input);
@@ -26,9 +26,9 @@ bool	phonebook::getinput_setfield(std::string field, std::string &input)
 	return (true);
 }
 
-void phonebook::add_contact()
+void PhoneBook::add_contact()
 {
-	contact new_contact;
+	Contact new_contact;
 	std::string input;
 
 	while (!getinput_setfield("First Name", input))
@@ -51,14 +51,14 @@ void phonebook::add_contact()
 	if (total_contacts < 8)
 		total_contacts++;
 }
-std::string phonebook::adjust_text(std::string text) const
+std::string PhoneBook::adjust_text(std::string text) const
 {
 	if (text.length() > 10)
 		return (text.substr(0, 9) + ".");
 	return (text);
 }
 
-void phonebook::print_contact_row(int i, std::string fname, std::string lname, std::string nname)
+void PhoneBook::print_contact_row(int i, std::string fname, std::string lname, std::string nname)
 {
 	std::cout << std::setw(10) << i << "|"
 				<< std::setw(10) << adjust_text(fname) << "|"
@@ -66,7 +66,7 @@ void phonebook::print_contact_row(int i, std::string fname, std::string lname, s
 				<< std::setw(10) << adjust_text(nname) << std::endl;		
 }
 
-void phonebook::print_contact()
+void PhoneBook::print_contact()
 {
 	std::cout << std::setw(10) << "Index" << "|"
 				<< std::setw(10) << "First Name" << "|"
@@ -76,7 +76,7 @@ void phonebook::print_contact()
 		print_contact_row(i, contacts[i].get_first_name(), contacts[i].get_last_name(), contacts[i].get_nickname());
 }
 
-void phonebook::display_contact(int i) const
+void PhoneBook::display_contact(int i) const
 {
 	std::cout << "First Name: " << contacts[i].get_first_name() << std::endl;
 	std::cout << "Last Name: " << contacts[i].get_last_name() << std::endl;
@@ -85,16 +85,66 @@ void phonebook::display_contact(int i) const
 	std::cout << "Darkest Secret: " << contacts[i].get_darkest_secret() << std::endl;
 }
 
-void phonebook::search_contact()
+bool is_number(const std::string &s)
 {
-	int	index;
+    std::size_t i = 0;
+
+    if (s[i] == '-')
+	{
+        if (s.size() == 1)
+		{
+            return false;
+        }
+        ++i;
+    }
+    while (i < s.size())
+	{
+        if (!std::isdigit(s[i]))
+            return false;
+        ++i;
+    }
+    return true;
+}
+
+int string_to_int(const std::string &s)
+{
+    int number = 0;
+    std::size_t i = 0;
+
+    if (s[i] == '-')
+        i = 1;
+    while (i < s.size())
+	{
+        number = number * 10 + (s[i] - '0');
+        ++i;
+    }
+    if (s[0] == '-')
+        number = -number;
+    return number;
+}
+
+void PhoneBook::search_contact()
+{
+	std::string	input;
+	int			index;
 	
 	print_contact();
-	std::cout << "Enter index of the contact you want to display: ";
-	std::cin >> index;
-	if (index >= 0 && index < total_contacts)
-		display_contact(index);
-	else
-		std::cout << "Invalid index" << std::endl;
+	while (1)
+	{
+		std::cout << "Enter index of the contact you want to display or BACK to exit: ";
+		std::cin >> input;
+		if (input == "BACK")
+			break;
+		if (is_number(input))
+		{
+			index = string_to_int(input);
+			if (index >= 0 && index < total_contacts)
+				display_contact(index);
+			else
+				std::cout << "Invalid index" << std::endl;
+		}
+		else
+			std::cout << "Invalid input" << std::endl;
+	}
 	
 }
