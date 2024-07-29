@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 09:06:59 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/07/29 10:19:59 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/07/29 13:02:37 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,6 @@ void replace(const std::string &filename, const std::string s1, const std::strin
 	}
 	inputFile.seekg(0, std::ios::beg);
 	std::string outputFile = filename + ".replace";
-	std::ifstream checkFile(outputFile.c_str());
-	if (checkFile.is_open())
-	{
-		checkFile.close();
-		outputFile += ".replace";
-	}
 	std::ofstream output(outputFile.c_str());
 	if (!output.is_open())
 	{
@@ -72,6 +66,7 @@ int	main(int argc, char **argv)
 	if (argc != 4)
 	{
 		std::cerr << "Error: Invalid number of arguments." << std::endl;
+		return (1);
 	}
 	std::string filename = argv[1];
 	std::string s1 = argv[2];
