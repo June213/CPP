@@ -6,7 +6,7 @@
 /*   By: june <june@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 11:14:14 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/03 11:50:39 by june             ###   ########.fr       */
+/*   Updated: 2024/08/03 12:28:08 by june             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits(void)const
 {
-	std::cout << "getRawBits memer function called" << std::endl;
+	std::cout << "getRawBits mebmer function called" << std::endl;
 	return (fixedPointValue);
 }
 

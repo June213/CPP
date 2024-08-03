@@ -6,7 +6,7 @@
 /*   By: june <june@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 11:14:14 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/03 12:28:00 by june             ###   ########.fr       */
+/*   Updated: 2024/08/03 13:22:54 by june             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,132 @@ std::ostream& operator<<(std::ostream &out, const Fixed &value)
 {
 	out << value.toFloat();
 	return out;
+}
+
+bool Fixed::operator<(const Fixed &src) const
+{
+	if (fixedPointValue > src.fixedPointValue)
+		return (false);
+	return (true);
+}
+
+bool Fixed::operator>(const Fixed &src) const
+{
+	if (fixedPointValue < src.fixedPointValue)
+		return (false);
+	return (true);
+}
+
+bool Fixed::operator<=(const Fixed &src) const
+{
+	if (fixedPointValue > src.fixedPointValue)
+		return (false);
+	return (true);
+}
+
+bool Fixed::operator>=(const Fixed &src) const
+{
+	if (fixedPointValue < src.fixedPointValue)
+		return (false);
+	return (true);
+}
+
+bool Fixed::operator==(const Fixed &src) const
+{
+	if (fixedPointValue != src.fixedPointValue)
+		return (false);
+	return (true);
+}
+
+bool Fixed::operator!=(const Fixed &src) const
+{
+	if (fixedPointValue == src.fixedPointValue)
+		return (false);
+	return (true);
+}
+
+Fixed Fixed::operator+(const Fixed &src) const
+{
+	Fixed result;
+	
+	result.setRawBits(fixedPointValue + src.fixedPointValue);
+	return result;
+}
+
+Fixed Fixed::operator-(const Fixed &src) const
+{
+	Fixed result;
+	
+	result.setRawBits(fixedPointValue - src.fixedPointValue);
+	return result;
+}
+
+Fixed Fixed::operator*(const Fixed &src) const
+{
+	Fixed result;
+	
+	result.setRawBits((fixedPointValue * src.fixedPointValue) >> fractionalBits);
+	return result;
+}
+
+Fixed Fixed::operator/(const Fixed &src) const
+{
+	Fixed result;
+	
+	result.setRawBits((fixedPointValue << fractionalBits) / src.fixedPointValue);
+	return result;
+}
+
+Fixed &Fixed::operator++(void)
+{
+	fixedPointValue++;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp(*this);
+	operator++();
+	return tmp;
+}
+
+Fixed &Fixed::operator--(void)
+{
+	fixedPointValue--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp(*this);
+	operator--();
+	return tmp;
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a <= b)
+		return a;
+	return b;
+}
+
+Fixed const &Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a <= b)
+		return a;
+	return b;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a >= b)
+		return a;
+	return b;
+}
+
+Fixed const &Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a >= b)
+		return a;
+	return b;
 }
