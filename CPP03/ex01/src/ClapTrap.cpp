@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 09:05:33 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/04 11:33:55 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/05 10:30:35 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,25 @@ ClapTrap::ClapTrap(const std::string &name, bool print)
 		std::cout << _attackDamage << " attack damage" << std::endl;
 		std::cout << std::endl;
 	}
+}
+
+ClapTrap::ClapTrap(const ClapTrap &src)
+{
+	std::cout << "ClapTrap " << _name << " was copied" << std::endl;
+	*this = src;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &src)
+{
+	std::cout << "ClapTrap " << _name << " was assigned" << std::endl;
+	if (this != &src)
+	{
+		_name = src._name;
+		_hitPoints = src._hitPoints;
+		_energyPoints = src._energyPoints;
+		_attackDamage = src._attackDamage;
+	}
+	return (*this);
 }
 
 ClapTrap::~ClapTrap()
