@@ -8,9 +8,11 @@ SRC_DIR = src
 
 OBJ_DIR = obj
 
-SRCS = 	$(SRC_DIR)/ClapTrap.cpp \
-		$(SRC_DIR)/ScavTrap.cpp \
-		$(SRC_DIR)/FragTrap.cpp \
+SRCS = 	$(SRC_DIR)/Animal.cpp \
+		$(SRC_DIR)/Cat.cpp \
+		$(SRC_DIR)/Dog.cpp \
+		$(SRC_DIR)/WrongAnimal.cpp \
+		$(SRC_DIR)/WrongCat.cpp \
 		$(SRC_DIR)/main.cpp \
 
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)

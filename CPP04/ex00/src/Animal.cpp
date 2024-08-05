@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 09:23:46 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/05 09:39:03 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/05 11:47:18 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 Animal::Animal() : _type("Animal")
 {
 	std::cout << "Animal created" << std::endl;
+}
+Animal::Animal(const std::string &type)
+{
+	_type = type;
+	std::cout << type << " created" << std::endl;
 }
 
 Animal::Animal(const Animal &copy) : _type(copy._type)
