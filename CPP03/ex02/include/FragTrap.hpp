@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 11:36:22 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/04 11:42:05 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/12 09:27:48 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 class FragTrap : public ClapTrap
 {
 	public:
+		FragTrap(void);
+		FragTrap(const FragTrap &src);
 		FragTrap(const std::string &name);
+		FragTrap&operator=(const FragTrap &src);
 		~FragTrap();
 
 		void attack(const std::string &target);

@@ -6,11 +6,15 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 09:05:33 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/05 10:30:35 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/12 09:25:03 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.hpp"
+
+ClapTrap::ClapTrap()
+	: _name(" "), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+{}
 
 ClapTrap::ClapTrap(const std::string &name, bool print)
 	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)

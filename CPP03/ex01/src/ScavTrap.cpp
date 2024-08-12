@@ -6,11 +6,16 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 10:13:39 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/05 10:34:34 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/12 09:36:00 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScavTrap.hpp"
+
+ScavTrap::ScavTrap(void) : ClapTrap()
+{
+	std::cout << "ScavTrap default constructor" << std::endl;
+}
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name, false)
 {
@@ -22,6 +27,25 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name, false)
 	std::cout << _energyPoints << " energy points" << std::endl;
 	std::cout << _attackDamage << " attack damage" << std::endl;
 	std::cout << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
+{
+	std::cout << "ScavTrap " << getName() << " was copied" << std::endl;
+	*this = src;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &src)
+{
+	std::cout << "ScavTrap " << getName() << " was assigned" << std::endl;
+	if (this != &src)
+	{
+		_name = src._name;
+		_hitPoints = src._hitPoints;
+		_energyPoints = src._energyPoints;
+		_attackDamage = src._attackDamage;
+	}
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()
