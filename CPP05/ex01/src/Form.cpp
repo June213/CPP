@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 09:27:29 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/19 10:04:30 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:22:49 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,10 @@ void Form::beSigned(const Bureaucrat& b)
 
 std::ostream &operator<<(std::ostream &os, const Form &f)
 {
-	os << "Form " << f.getName() << " is ";
+	os << f.getName() << " is ";
 	if (f.getSigned())
 		os << "signed" << std::endl;
 	else
-		os << "not signedand requires grade " << f.getGradeToSign() << " to sign and grade " << f.getGradeToExecute() << " to execute." << std::endl;
+		os << "not signed and requires grade " << f.getGradeToSign() << " to sign and grade " << f.getGradeToExecute() << " to execute." << std::endl;
 	return (os);
 }

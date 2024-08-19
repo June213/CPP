@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:34:45 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/19 10:05:02 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:21:29 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main() {
         Form contract("Employment Contract", 45, 30);
 
         std::cout << contract;
-        contract.beSigned(bob);
+        bob.signForm(contract);
         std::cout << contract;
     }
     catch (const std::exception& e) {
@@ -33,7 +33,7 @@ int main() {
         Form nda("NDA", 55, 45);
 
         std::cout << nda;
-        nda.beSigned(alice);
+        alice.signForm(nda);
         std::cout << nda;
     }
     catch (const std::exception& e) {
@@ -47,7 +47,7 @@ int main() {
         Form permission("Permission Slip", 30, 20);
         
         std::cout << permission;
-        permission.beSigned(charlie);
+        charlie.signForm(permission);
         std::cout << permission;
     }
     catch (const std::exception& e) {

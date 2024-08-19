@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 11:00:31 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/19 09:54:07 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:16:42 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
 	private:

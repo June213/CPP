@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:08:13 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/16 10:34:14 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:17:43 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,18 @@ std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)
 {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
 	return (os);
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << _name << " signs " << f.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << _name << " could not sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+	
 }
