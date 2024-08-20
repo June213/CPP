@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 09:48:08 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/16 10:38:57 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/20 09:39:54 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Bureaucrat
 		std::string const	_name;
 		int 				_grade;
 	public:
+		Bureaucrat();
 		Bureaucrat(const std::string &_name, int _grade);
 		~Bureaucrat();
 		Bureaucrat(const Bureaucrat &src);

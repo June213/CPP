@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:08:13 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/20 13:19:59 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/20 13:20:42 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Bureaucrat::Bureaucrat(const std::string &_name, int _grade)
 			throw GradeTooLowException();
 }
 
-Bureaucrat::~Bureaucrat(){}
+Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src)
 	: _name(src._name), _grade(src._grade)
@@ -92,4 +92,32 @@ std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)
 {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
 	return (os);
+}
+
+void Bureaucrat::signForm(AForm &f)
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << _name << " signs " << f.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << _name << " could not sign " << f.getName() << " because: " << e.what() << std::endl;
+	}
+	
+}
+
+void Bureaucrat::executeForm(const AForm &form)
+{
+	std::cout << this->getName() << " with grade " << this->getGrade() << " tries to execute " << form.getName() << " with grade " << form.getGradeToExecute() << std::endl;
+	if (this->getGrade() <= form.getGradeToExecute())
+	{
+		form.execute(*this);
+	}
+	else
+	{
+		std::cout << this->getName() << " could not execute " << form.getName() << " because: ";
+		throw GradeTooLowException();
+	}
 }

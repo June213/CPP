@@ -6,11 +6,14 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:08:13 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/19 10:17:43 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/20 13:20:19 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat()
+	: _name("Default"), _grade(0) {}
 
 class Bureaucrat::GradeTooHighException : public std::exception
 {
@@ -39,10 +42,7 @@ Bureaucrat::Bureaucrat(const std::string &_name, int _grade)
 			throw GradeTooLowException();
 }
 
-Bureaucrat::~Bureaucrat()
-{
-	std::cout << "Bureaucrat " << _name << " destroyed." << std::endl;
-}
+Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src)
 	: _name(src._name), _grade(src._grade)
