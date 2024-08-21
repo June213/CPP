@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: june <june@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:06:39 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/20 13:23:25 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/08/21 08:51:55 by june             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <iostream>
 #include <string>
-#include <fstream>
+#include <cstdlib>
+#include <ctime>
 #include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm
