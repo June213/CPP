@@ -9,6 +9,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 
 SRCS = 	$(SRC_DIR)/ScalarConverter.cpp \
+		$(SRC_DIR)/main.cpp
 
 
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
