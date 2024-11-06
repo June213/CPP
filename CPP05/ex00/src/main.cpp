@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:34:45 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/08/16 10:47:58 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/10/30 13:14:30 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	try
 	{
-		Bureaucrat b1("John", 3);
+		Bureaucrat cd("John", 3);
 		std::cout << b1 << std::endl;
 		Bureaucrat b2("Jane", 149);
 		std::cout << b2 << std::endl;

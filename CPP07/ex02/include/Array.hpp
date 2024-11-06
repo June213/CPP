@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:04:51 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/10/23 10:14:58 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/10/23 10:39:41 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <exception>
+#include <cstdlib>
+#include <ctime>
 
 template <typename T> class Array
 {

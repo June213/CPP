@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 09:12:37 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/10/16 11:52:02 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/11/06 09:33:52 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void ScalarConverter::convertFromFloat(const std::string &literal)
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 	else
 		std::cout << "char: impossible" << std::endl;
-	if (value < INT_MIN || value > INT_MAX)
+	if (value < INT_MIN || static_cast<int>(value) > INT_MAX)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(value) << std::endl;
