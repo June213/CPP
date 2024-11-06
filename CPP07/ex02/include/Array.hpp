@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:04:51 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/10/23 10:39:41 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/11/06 09:52:30 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,17 @@ template <typename T> class Array
 			return (this->array[i]);
 		}
 		
-		unsigned int size() const
-		{
-			return (n);
-		}
-		
 		void exception(unsigned int i) const
 		{
 			if (i >= n)
 				throw std::out_of_range("Index out of range.");
 		}
+		
+		unsigned int size() const
+		{
+			return (n);
+		}
+		
 };
 
 #endif
