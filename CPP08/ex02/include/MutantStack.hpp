@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 09:18:54 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/11/21 10:26:42 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/11/22 09:51:26 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class MutantStack : public std::stack<T>
 		~MutantStack();
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
-		typedef typename std::stack<T>::container_type::iterator const_iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
 		iterator begin();
 		iterator end();
