@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:25:46 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/11/27 13:11:08 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/12/10 09:41:05 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,9 @@ bool BitcoinExchange::isValidDate(const std::string &date) const
 	int maxDay = daysInMonth[month - 1];
 	if (month == 2 && isLeapYear(year))
 		maxDay = 29;
-	return (day <= maxDay);
+	if (day <= maxDay)
+		return true;
+	return false;
 }
 
 bool BitcoinExchange::isValidValue(const std::string &value) const
@@ -165,9 +167,7 @@ bool BitcoinExchange::isLeapYear(int year)
 {
 	if ( year % 4 != 0)
 		return false;
-	if (year % 100 != 0)
-		return true;
-	if (year % 400 != 0)
-		return true;
-	return false;
+	if (year % 100 == 0 && year % 400 != 0)
+		return false;
+	return true;
 }

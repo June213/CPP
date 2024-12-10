@@ -1,5 +1,14 @@
-
-// falta el encabezado de 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/10 09:20:47 by jsalaber          #+#    #+#             */
+/*   Updated: 2024/12/10 09:52:08 by jsalaber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PMERGEME_HPP
 # define PMERGEME_HPP
@@ -12,7 +21,6 @@
 #include <exception>
 #include <cstdlib>
 #include <ctime>
-#include <chrono>
 #include <sstream>
 
 class PmergeMe

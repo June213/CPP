@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 10:44:01 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/11/28 11:27:23 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/12/10 09:50:06 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int RPN::evaluate(const std::string &expr)
 			throw std::runtime_error("Error: Invalid character");
 	}
 	if (_stack.size() != 1)
-		throw std::runtime_error("Error: Too many operands");
+		throw std::runtime_error("Error: Not enough operators to combine all operands.");
 	return topStack();
 }
 
